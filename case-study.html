@@ -102,19 +102,24 @@
   /* SCREENS GALLERY */
   .screens-section { background: #f9f9f9; }
   .screens-intro { margin-bottom: 48px; }
-  .screen-group { margin-bottom: 64px; }
+  .screen-group { margin-bottom: 72px; }
   .screen-group-title { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
   .screen-group-desc { font-size: 15px; color: #444; margin-bottom: 24px; max-width: 560px; }
   .screen-row { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
   .screen-item { display: flex; flex-direction: column; gap: 10px; }
   .screen-item img {
-    width: 200px;
-    border-radius: 24px;
+    width: 180px;
+    border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
     border: 1px solid rgba(0,0,0,0.06);
     display: block;
   }
-  .screen-caption { font-size: 12px; color: var(--gray); text-align: center; width: 200px; }
+  .screen-item img.wireframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid #ddd;
+  }
+  .screen-caption { font-size: 12px; color: var(--gray); text-align: center; width: 180px; }
   .screen-annotation {
     flex: 1; min-width: 240px; align-self: center;
     background: #fff; border-radius: 12px; padding: 24px;
@@ -125,6 +130,20 @@
   .screen-annotation ul li { font-size: 14px; color: #444; padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; }
   .screen-annotation ul li::before { content: '→'; color: var(--accent); font-weight: 600; }
   .screen-annotation ul li:last-child { border-bottom: none; }
+  .phase-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; padding: 4px 12px;
+    border-radius: 100px; margin-bottom: 28px;
+  }
+  .phase-lo { background: #f0f0f0; color: #555; }
+  .phase-hi { background: var(--accent-light); color: var(--accent); }
+  .phase-divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 48px 0; color: var(--gray); font-size: 13px;
+  }
+  .phase-divider::before, .phase-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
 
   footer { border-top: 1px solid var(--border); padding: 48px 0; text-align: center; color: var(--gray); font-size: 13px; }
   footer span { color: var(--accent); font-weight: 600; }
@@ -284,24 +303,55 @@
 <!-- SCREENS -->
 <section id="screens" class="screens-section">
   <div class="container">
-    <div class="section-label">04 — Prototype Screens</div>
+    <div class="section-label">04 — From Wireframes to Prototype</div>
     <div class="screens-intro">
-      <h2>The product, screen by screen</h2>
-      <p>The following screens are from the high-fidelity prototype, built iteratively through rounds of clinical feedback. Each screen reflects a specific design decision rooted in the research.</p>
+      <h2>Designing in the open</h2>
+      <p>The product was built iteratively — early low-fidelity wireframes were shared with clinical staff from the second research session onward, generating feedback that directly shaped what became the high-fidelity prototype.</p>
     </div>
 
-    <!-- Patients List -->
+    <!-- LOW FI -->
+    <span class="phase-label phase-lo">⬜ Early wireframes — Lo-fi</span>
+
     <div class="screen-group">
       <div class="screen-row">
         <div class="screen-item">
-          <img src="data:image/jpeg;base64,PLACEHOLDER_PATIENTS_LIST" id="img-patients" alt="Patients list screen" />
+          <img id="img-lofi-patients" class="wireframe" alt="Lo-fi patients list" />
+          <div class="screen-caption">Patients list — lo-fi</div>
+        </div>
+        <div class="screen-item">
+          <img id="img-lofi-profile" class="wireframe" alt="Lo-fi patient profile" />
+          <div class="screen-caption">Patient profile — lo-fi</div>
+        </div>
+        <div class="screen-annotation">
+          <div class="screen-group-title">Early Wireframes</div>
+          <p class="screen-group-desc">Low-fidelity sketches shared with ward staff to validate structure and flow before committing to visual design.</p>
+          <ul>
+            <li>Ward-grouped patient list with NEWS2 and task count surfaced early</li>
+            <li>Patient profile tabs (Needs, Obs required, Treatment plan) tested with clinicians</li>
+            <li>Quick iteration cycle — feedback collected in the same session</li>
+            <li>Helped identify that staff needed a task-first, not patient-first, entry point</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-divider">Iterated based on clinical feedback</div>
+
+    <!-- HIGH FI -->
+    <span class="phase-label phase-hi">🎨 High-fidelity prototype</span>
+
+    <!-- Patients List HiFi -->
+    <div class="screen-group">
+      <div class="screen-row">
+        <div class="screen-item">
+          <img id="img-patients" alt="Patients list" />
           <div class="screen-caption">Patients list</div>
         </div>
         <div class="screen-annotation">
           <div class="screen-group-title">Patients List</div>
-          <p class="screen-group-desc">A ward-grouped list giving staff an immediate overview of all patients, their current NEWS2 score, and observation frequency.</p>
+          <p class="screen-group-desc">A ward-grouped list giving staff an immediate overview of all patients, their current NEWS2 score, trend, and observation frequency.</p>
           <ul>
-            <li>NEWS2 score and trend visible at a glance</li>
+            <li>NEWS2 score and trend arrow visible at a glance</li>
             <li>Observation type (Intermittent, Continuous, etc.) surfaced inline</li>
             <li>Filter by ward to reduce cognitive load on busy units</li>
             <li>Search by name, bay, or ward for quick access</li>
@@ -310,62 +360,59 @@
       </div>
     </div>
 
-    <!-- Patient Profile -->
+    <!-- Patient Profile HiFi -->
     <div class="screen-group">
       <div class="screen-row">
         <div class="screen-item">
-          <img src="data:image/jpeg;base64,PLACEHOLDER_PROFILE_TODO" id="img-profile-todo" alt="Patient profile - To do" />
-          <div class="screen-caption">Patient profile — To do</div>
-        </div>
-        <div class="screen-item">
-          <img src="data:image/jpeg;base64,PLACEHOLDER_PROFILE_HISTORY" id="img-profile-history" alt="Patient profile - History" />
+          <img id="img-profile-history" alt="Patient profile — History" />
           <div class="screen-caption">Patient profile — History</div>
         </div>
         <div class="screen-annotation">
           <div class="screen-group-title">Patient Profile</div>
-          <p class="screen-group-desc">A single screen combining patient identity, clinical alerts, and upcoming observations — without navigating away.</p>
+          <p class="screen-group-desc">A single screen combining patient identity, clinical alerts, and observation history — no navigation needed.</p>
           <ul>
-            <li>Alerts, allergies and NEWS2 score always visible at the top</li>
+            <li>Alerts, allergies and NEWS2 always visible at the top</li>
             <li>To do / History toggle keeps the interface uncluttered</li>
             <li>History view uses a timeline to show missed and completed obs</li>
+            <li>Missed observations highlighted in pink for immediate visibility</li>
             <li>Gender field added following forensic ward feedback</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Tasks List -->
+    <!-- Tasks List HiFi -->
     <div class="screen-group">
       <div class="screen-row">
         <div class="screen-item">
-          <img src="data:image/jpeg;base64,PLACEHOLDER_TASKS" id="img-tasks" alt="Tasks list screen" />
+          <img id="img-tasks" alt="Tasks list" />
           <div class="screen-caption">Tasks list</div>
         </div>
         <div class="screen-annotation">
           <div class="screen-group-title">Tasks List</div>
-          <p class="screen-group-desc">A cross-patient view of all pending observations, requested consistently across all sites during research. Staff needed to see what's overdue, what's coming up, and what's in progress — without going patient by patient.</p>
+          <p class="screen-group-desc">A cross-patient view of all pending observations — requested consistently across all sites. Staff needed to see what's overdue and what's coming without going patient by patient.</p>
           <ul>
             <li>Overdue tasks surface immediately with clear visual urgency</li>
-            <li>Observation completion state shown inline (e.g. 1 out of 4 left)</li>
+            <li>Completion state shown inline (e.g. 1 out of 4 left)</li>
             <li>Sortable and filterable by type, status, or time</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Observation Summary -->
+    <!-- Observation Summary HiFi -->
     <div class="screen-group">
       <div class="screen-row">
         <div class="screen-item">
-          <img src="data:image/jpeg;base64,PLACEHOLDER_OBS_SUMMARY" id="img-obs" alt="Observation summary screen" />
+          <img id="img-obs" alt="Observation summary" />
           <div class="screen-caption">Observation summary</div>
         </div>
         <div class="screen-annotation">
           <div class="screen-group-title">Observation Summary</div>
-          <p class="screen-group-desc">Before saving, staff see a full summary of the NEWS2 reading with per-vital scores and an overall trend indicator — addressing the research finding that staff wanted scores visible as they enter data.</p>
+          <p class="screen-group-desc">Before saving, staff see a full summary of the NEWS2 reading with per-vital scores — addressing the research finding that staff wanted scores visible as they enter data.</p>
           <ul>
-            <li>Per-vital scores shown alongside each value</li>
-            <li>Overall NEWS2 score and trend arrow prominent at the top</li>
+            <li>Per-vital scores shown alongside each reading</li>
+            <li>Overall NEWS2 score and trend arrow prominent</li>
             <li>Observation Chart preview available before confirming</li>
             <li>Single "Save observation" CTA — no ambiguity</li>
           </ul>
@@ -442,39 +489,43 @@
 </footer>
 
 <script>
-  // Load images from the screenshots provided
-  const screens = [
-    { id: 'img-patients', index: 1 },
-    { id: 'img-profile-todo', index: 0 },
-    { id: 'img-profile-history', index: 3 },
-    { id: 'img-tasks', index: 2 },
-    { id: 'img-obs', index: 4 },
-  ];
+  // Image assignments:
+  // img-lofi-patients  → Image 5 (lo-fi patients list)
+  // img-lofi-profile   → Image 6 (lo-fi patient profile)
+  // img-patients       → Image 2 (hi-fi patients list)
+  // img-profile-history→ Image 1 (hi-fi profile history)
+  // img-tasks          → Image 3 (hi-fi tasks list)
+  // img-obs            → Image 4 (hi-fi obs summary)
 
-  // Map image elements to the actual uploaded screenshots
-  // Images are passed in as: Image 1 = profile, Image 2 = patients list, Image 3 = tasks, Image 4 = history, Image 5 = obs summary
-  const imageMap = {
-    'img-patients': 'img2',
-    'img-profile-todo': 'img1',
-    'img-profile-history': 'img4',
-    'img-tasks': 'img3',
-    'img-obs': 'img5',
+  // PASTE BASE64 STRINGS BELOW — replace each PLACEHOLDER_x with the actual base64 data
+  const images = {
+    'img-lofi-patients':   'lofi-patients.png',
+    'img-lofi-profile':    'lofi-profile.png',
+    'img-patients':        'hifi-patients.png',
+    'img-profile-history': 'hifi-profile.png',
+    'img-tasks':           'hifi-tasks.png',
+    'img-obs':             'hifi-obs.png',
   };
 
-  // Since we can't use base64 directly in this context, 
-  // we'll use CSS to style the placeholder images nicely
-  document.querySelectorAll('.screen-item img').forEach(img => {
-    img.onerror = function() {
+  Object.entries(images).forEach(([id, filename]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.src = filename;
+    el.onerror = function() {
       this.style.display = 'none';
-      const placeholder = document.createElement('div');
-      placeholder.style.cssText = `
-        width: 200px; height: 380px; background: #f0f0f0;
-        border-radius: 24px; display: flex; align-items: center;
-        justify-content: center; font-size: 13px; color: #999;
-        border: 1px solid #e0e0e0; text-align: center; padding: 16px;
+      const ph = document.createElement('div');
+      const isWireframe = this.classList.contains('wireframe');
+      ph.style.cssText = `
+        width: 180px;
+        height: ${isWireframe ? '320px' : '380px'};
+        background: ${isWireframe ? '#f5f5f5' : '#e8f4f1'};
+        border-radius: ${isWireframe ? '12px' : '20px'};
+        display: flex; align-items: center; justify-content: center;
+        font-size: 12px; color: #999; border: 1px dashed #ccc;
+        text-align: center; padding: 16px;
       `;
-      placeholder.textContent = this.alt;
-      this.parentNode.insertBefore(placeholder, this);
+      ph.textContent = this.alt;
+      this.parentNode.insertBefore(ph, this);
     };
   });
 </script>
