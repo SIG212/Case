@@ -222,8 +222,9 @@
 <nav>
   <a href="index.html" class="logo">← Sergiu Iliuță</a>
   <ul>
-    <li><a href="#overview">Overview</a></li>
+    <li><a href="#process">Process</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#userflow">User Flow</a></li>
     <li><a href="#screens">Prototype</a></li>
     <li><a href="#outcomes">Outcomes</a></li>
     <li><a href="index.html" class="nav-back">← Back</a></li>
@@ -267,6 +268,23 @@
     </div>
   </div>
 </div>
+
+<!-- PROCESS TIMELINE -->
+<section id="process" style="background: var(--light-gray); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">01 — Process</div>
+    <h2>9 months, end to end</h2>
+    <p style="max-width:560px; margin-bottom:48px;">From joining the project to writing dev specs — every phase was grounded in what we learned from the people actually using the product.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">Apr</div><div class="tl-content"><h3>Joined the project</h3><p>Understanding the existing eObs product, its limitations, and the clinical context it operates in.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">May</div><div class="tl-content"><h3>On-site visit in London + first interviews</h3><p>First-hand ward observation. Key findings: login issues, no offline mode, agency staff completely excluded, tablets preferred over mobile.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">Jun–Jul</div><div class="tl-content"><h3>User interviews, competitor analysis, product audit</h3><p>Remote interviews across multiple NHS sites. Team storm events to align on scope. Competitor benchmarking to understand what good looks like.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">Aug</div><div class="tl-content"><h3>Personas + user flow</h3><p>Three research-backed personas created. Full user flow mapped from login to completed observation across all three entry points.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">Sep–Oct</div><div class="tl-content"><h3>Lo-fi iterations + stakeholder feedback</h3><p>23+ feedback sessions with stakeholders and clinical staff. Constant adjustments — therapeutic obs per hour, gender field, NEWS2 scores visible as entered.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">Nov–Dec</div><div class="tl-content"><h3>Hi-fi prototype + dev specs</h3><p>High fidelity designs finalised. Mobile–tablet consistency tackled. Specs written for the development team.</p></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- OVERVIEW -->
 <section id="overview">
@@ -377,10 +395,43 @@
   </div>
 </section>
 
+<!-- USER FLOW -->
+<section id="userflow" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">04 — User Flow</div>
+    <div class="two-col" style="margin-bottom: 48px;">
+      <div>
+        <h2>Mapping the full journey</h2>
+        <p>Before moving into wireframes, I mapped out the complete user flow — from login to completing an observation. This helped align the team on scope, surface edge cases early, and make conscious decisions about what belonged in the core flow vs. secondary paths.</p>
+        <p>The flow covers three main entry points: the Patients list, the Tasks list, and the Side menu — each serving a different mental model depending on how a staff member starts their shift.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="background: var(--accent-light); border-radius: 10px; padding: 14px 18px; display: flex; gap: 12px; align-items: center;">
+          <span style="width:14px; height:14px; border-radius:3px; background:#1db954; flex-shrink:0;"></span>
+          <span style="font-size: 13px; color: var(--black);">Green nodes — Actions (what the user does)</span>
+        </div>
+        <div style="background: var(--light-gray); border-radius: 10px; padding: 14px 18px; display: flex; gap: 12px; align-items: center;">
+          <span style="width:14px; height:14px; border-radius:3px; background:#c9b8f5; flex-shrink:0;"></span>
+          <span style="font-size: 13px; color: var(--black);">Purple nodes — Pages (what the user sees)</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--light-gray); border-radius: 16px; overflow: hidden; border: 1px solid var(--border);">
+      <img id="img-userflow" src="userflow.png" alt="eObs user flow diagram"
+        style="width: 100%; display: block; cursor: zoom-in;"
+        onclick="this.style.transform = this.style.transform ? '' : 'scale(1.5)'; this.style.transformOrigin='top left'; this.style.transition='transform .3s';"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div style="display:none; height:200px; align-items:center; justify-content:center; font-size:13px; color:#999;">userflow.png — add to repo</div>
+    </div>
+    <p style="font-size: 12px; color: var(--gray); margin-top: 10px; text-align: center;">Click to zoom</p>
+  </div>
+</section>
+
 <!-- SCREENS -->
 <section id="screens" class="screens-section" style="border-top: 1px solid var(--border);">
   <div class="container">
-    <div class="section-label">04 — From Wireframes to Prototype</div>
+    <div class="section-label">05 — From Wireframes to Prototype</div>
     <h2>Designing in the open</h2>
     <p style="max-width: 560px; margin-bottom: 48px;">Early lo-fi wireframes were shared with clinical staff from the second research session onward — generating feedback that directly shaped the high-fidelity prototype.</p>
 
