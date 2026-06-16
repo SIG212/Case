@@ -156,13 +156,13 @@ nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
 }
 
 .section-lead {
-  font-size: 15px; color: #444; line-height: 1.85;
+  font-size: 17px; color: #444; line-height: 1.85;
   font-weight: 300; margin-bottom: 24px;
   max-width: 600px;
 }
 
 .body-p {
-  font-size: 13px; color: var(--muted);
+  font-size: 15px; color: var(--muted);
   line-height: 1.9; font-weight: 300;
   margin-bottom: 16px;
 }
@@ -178,7 +178,7 @@ blockquote {
 }
 
 blockquote p {
-  font-size: 13px; color: #555;
+  font-size: 15px; color: #555;
   line-height: 1.75; font-style: italic;
   font-family: 'Playfair', serif;
   margin-bottom: 8px;
@@ -232,8 +232,8 @@ blockquote cite {
 }
 
 .timeline-content { padding-bottom: 4px; }
-.timeline-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-.timeline-desc { font-size: 12px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.timeline-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.timeline-desc { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300; }
 
 /* ── WHO USES ── */
 .user-grid {
@@ -252,8 +252,8 @@ blockquote cite {
   align-items: flex-start;
 }
 
-.user-role { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
-.user-desc { font-size: 10px; color: var(--muted); font-weight: 300; }
+.user-role { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.user-desc { font-size: 12px; color: var(--muted); font-weight: 300; }
 
 .usage-bar {
   display: flex; gap: 3px; align-items: center; margin-top: 6px;
@@ -293,7 +293,7 @@ blockquote cite {
 }
 
 .insight-list li {
-  font-size: 11px; color: var(--muted);
+  font-size: 13px; color: var(--muted);
   line-height: 1.5; font-weight: 300;
   display: flex; gap: 8px; align-items: flex-start;
 }
@@ -321,8 +321,8 @@ blockquote cite {
 }
 
 .ward-icon { font-size: 16px; margin-bottom: 8px; }
-.ward-title { font-size: 11px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-.ward-desc { font-size: 11px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+.ward-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.ward-desc { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 300; }
 
 /* ── IMAGE BLOCK ── */
 .img-block {
@@ -402,8 +402,8 @@ blockquote cite {
 .screen-line.short { width: 40%; }
 
 .screen-info { padding: 14px 16px; }
-.screen-name { font-size: 12px; font-weight: 500; color: #b0c8e0; margin-bottom: 3px; }
-.screen-desc { font-size: 10px; color: #4a7a9b; line-height: 1.5; font-weight: 300; }
+.screen-name { font-size: 14px; font-weight: 500; color: #b0c8e0; margin-bottom: 3px; }
+.screen-desc { font-size: 12px; color: #4a7a9b; line-height: 1.5; font-weight: 300; }
 
 /* ── PRINCIPLES ── */
 .principles-grid {
@@ -420,8 +420,8 @@ blockquote cite {
 }
 
 .principle-icon { font-size: 20px; margin-bottom: 10px; }
-.principle-title { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-.principle-desc { font-size: 11px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.principle-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+.principle-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
 
 /* ── OUTCOMES ── */
 .outcomes-bar {
@@ -766,7 +766,9 @@ footer {
     <p class="section-lead">Before moving into wireframes, I mapped the complete user flow — from login to completing an observation. Three main entry points: the Patients list, the Tasks list, and the Side menu — each serving a different mental model depending on how a staff member starts their shift.</p>
 
     <div class="img-block">
-      <img src="https://sig212.github.io/Case/userflow.png" alt="eObservations user flow diagram showing the complete journey from login to completed observation" loading="lazy">
+      <a href="https://sig212.github.io/Case/userflow.png" title="Click to view full size" style="display:block;cursor:zoom-in">
+        <img src="https://sig212.github.io/Case/userflow.png" alt="eObservations user flow diagram showing the complete journey from login to completed observation" loading="lazy" style="transition:opacity 0.2s" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+      </a>
       <div class="img-caption">Full user flow — from login to completed observation, covering all three entry points and edge cases.</div>
     </div>
   </section>
@@ -782,7 +784,7 @@ footer {
       <div class="screens-grid">
         <div class="screen-card">
           <div class="screen-visual" style="height:220px;background:#1a1a1a;padding:0">
-            <img src="https://sig212.github.io/Case/lofi-patients.png" alt="Lo-fi patients list wireframe" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0">
+            <a href="https://sig212.github.io/Case/lofi-patients.png" title="Click to view full size" style="display:block;width:100%;height:100%;cursor:zoom-in"><img src="https://sig212.github.io/Case/lofi-patients.png" alt="Lo-fi patients list wireframe" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"></a>
           </div>
           <div class="screen-info">
             <div class="screen-name">Patients list — lo-fi</div>
@@ -791,7 +793,7 @@ footer {
         </div>
         <div class="screen-card">
           <div class="screen-visual" style="height:220px;background:#1a1a1a;padding:0">
-            <img src="https://sig212.github.io/Case/lofi-profile.png" alt="Lo-fi patient profile wireframe" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0">
+            <a href="https://sig212.github.io/Case/lofi-profile.png" title="Click to view full size" style="display:block;width:100%;height:100%;cursor:zoom-in"><img src="https://sig212.github.io/Case/lofi-profile.png" alt="Lo-fi patient profile wireframe" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"></a>
           </div>
           <div class="screen-info">
             <div class="screen-name">Patient profile — lo-fi</div>
@@ -805,7 +807,7 @@ footer {
     <div class="screens-grid">
       <div class="screen-card">
         <div class="screen-visual" style="height:220px;background:#1a1a1a;padding:0">
-          <img src="https://sig212.github.io/Case/hifi-patients.png" alt="Hi-fi patients list screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0">
+          <a href="https://sig212.github.io/Case/hifi-patients.png" title="Click to view full size" style="display:block;width:100%;height:100%;cursor:zoom-in"><img src="https://sig212.github.io/Case/hifi-patients.png" alt="Hi-fi patients list screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"></a>
         </div>
         <div class="screen-info">
           <div class="screen-name">Patients list</div>
@@ -814,7 +816,7 @@ footer {
       </div>
       <div class="screen-card">
         <div class="screen-visual" style="height:220px;background:#1a1a1a;padding:0">
-          <img src="https://sig212.github.io/Case/hifi-profile.png" alt="Hi-fi patient profile screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0">
+          <a href="https://sig212.github.io/Case/hifi-profile.png" title="Click to view full size" style="display:block;width:100%;height:100%;cursor:zoom-in"><img src="https://sig212.github.io/Case/hifi-profile.png" alt="Hi-fi patient profile screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"></a>
         </div>
         <div class="screen-info">
           <div class="screen-name">Patient profile</div>
@@ -823,7 +825,7 @@ footer {
       </div>
       <div class="screen-card">
         <div class="screen-visual" style="height:220px;background:#1a1a1a;padding:0">
-          <img src="https://sig212.github.io/Case/hifi-tasks.png" alt="Hi-fi tasks list screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0">
+          <a href="https://sig212.github.io/Case/hifi-tasks.png" title="Click to view full size" style="display:block;width:100%;height:100%;cursor:zoom-in"><img src="https://sig212.github.io/Case/hifi-tasks.png" alt="Hi-fi tasks list screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"></a>
         </div>
         <div class="screen-info">
           <div class="screen-name">Tasks list</div>
@@ -832,7 +834,7 @@ footer {
       </div>
       <div class="screen-card">
         <div class="screen-visual" style="height:220px;background:#1a1a1a;padding:0">
-          <img src="https://sig212.github.io/Case/hifi-obs.png" alt="Hi-fi observation summary screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0">
+          <a href="https://sig212.github.io/Case/hifi-obs.png" title="Click to view full size" style="display:block;width:100%;height:100%;cursor:zoom-in"><img src="https://sig212.github.io/Case/hifi-obs.png" alt="Hi-fi observation summary screen" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:0;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"></a>
         </div>
         <div class="screen-info">
           <div class="screen-name">Observation summary</div>
